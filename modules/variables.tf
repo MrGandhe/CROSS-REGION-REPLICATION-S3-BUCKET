@@ -17,6 +17,3 @@ variable "replication_rule_storage_class"{
 variable "destination_bucket_name" {
     type = string
 }
-variable "s3_bucket_versioning_status" {
-  default = "Enabled"
-}
