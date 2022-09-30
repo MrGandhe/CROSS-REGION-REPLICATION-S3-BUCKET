@@ -1,6 +1,5 @@
 resource "aws_s3_bucket_replication_configuration" "replication" {
   # Must have bucket versioning enabled first
-  provider = aws.centric
 
   role   = aws_iam_role.replication.arn
   bucket = var.source_bucket_name

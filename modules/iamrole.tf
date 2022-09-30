@@ -32,7 +32,7 @@ resource "aws_iam_policy" "replication" {
       ],
       "Effect": "Allow",
       "Resource": [
-        "${var.aws_s3_source_bucket_arn}"
+        "arn:aws:s3:::${var.source_bucket_name}"
       ]
     },
     {
@@ -43,7 +43,7 @@ resource "aws_iam_policy" "replication" {
       ],
       "Effect": "Allow",
       "Resource": [
-        "${var.aws_s3_source_bucket_arn}/*"
+        "arn:aws:s3:::${var.source_bucket_name}/*"
       ]
     },
     {
