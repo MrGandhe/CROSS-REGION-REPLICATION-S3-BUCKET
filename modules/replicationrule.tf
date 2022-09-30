@@ -5,7 +5,7 @@ resource "aws_s3_bucket_replication_configuration" "replication" {
   bucket = var.source_bucket_name
 
   rule {
-    id = var.replication_rule_id
+    id = "${var.source_bucket_name}.${var.destination_bucket_name}-id"
 
 
 

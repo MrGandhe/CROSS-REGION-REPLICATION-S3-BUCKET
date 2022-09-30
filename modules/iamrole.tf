@@ -1,5 +1,5 @@
 resource "aws_iam_role" "replication" {
-  name = "${var.source_bucket_name}.${var.destination_bucket_name}"
+  name = "${var.source_bucket_name}.${var.destination_bucket_name}-rep"
 
   assume_role_policy = <<POLICY
 {
@@ -19,7 +19,7 @@ POLICY
 }
 
 resource "aws_iam_policy" "replication" {
-  name = "${var.source_bucket_name}.${var.destination_bucket_name}"
+  name = "${var.source_bucket_name}.${var.destination_bucket_name}-rep-policy"
 
   policy = <<POLICY
 {
