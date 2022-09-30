@@ -5,15 +5,15 @@ resource "aws_s3_bucket_replication_configuration" "replication" {
   bucket = var.source_bucket_name
 
   rule {
-    id = "SSR"
+    id = var.replication_rule_id
 
 
 
-    status = "Enabled"
+    status = var.replication_rule_status
 
     destination {
       bucket        = aws_s3_bucket.destination.arn
-      storage_class = "STANDARD"
+      storage_class = var.replication_rule_storage_class
     }
   }
 }

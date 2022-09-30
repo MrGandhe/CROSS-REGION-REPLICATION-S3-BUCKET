@@ -1,5 +1,5 @@
 resource "aws_iam_role" "replication" {
-  name = "tf-iam-role-replication-12345"
+  name = "${var.source_bucket_name}.${var.destination_bucket_name}"
 
   assume_role_policy = <<POLICY
 {
@@ -19,7 +19,7 @@ POLICY
 }
 
 resource "aws_iam_policy" "replication" {
-  name = "tf-iam-role-policy-replication-12345"
+  name = "${var.source_bucket_name}.${var.destination_bucket_name}"
 
   policy = <<POLICY
 {
