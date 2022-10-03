@@ -11,6 +11,7 @@ resource "aws_s3_bucket_versioning" "destination" {
 
 resource "aws_s3_bucket_versioning" "source" {
   bucket = var.source_bucket_name
+
   versioning_configuration {
     status = "Enabled"
   }
